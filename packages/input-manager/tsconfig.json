@@ -1,14 +1,13 @@
 {
 	"extends": "@wrysgames/tsconfig/base.json",
 	"compilerOptions": {
-		"typeRoots": ["node_modules/@rbxts"],
-
 		"rootDir": "src",
 		"outDir": "out",
 		"baseUrl": "src",
 		"incremental": true,
 		"tsBuildInfoFile": "out/tsconfig.tsbuildinfo",
-		"declaration": true
+		"declaration": true,
+		"typeRoots": ["node_modules/@rbxts"]
 	},
 	"include": ["src"],
 	"exclude": ["out"]

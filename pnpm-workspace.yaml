@@ -9,3 +9,4 @@ catalog:
   '@rbxts/types': 1.0.867
   roblox-ts: 3.0.0
   typescript: 5.9.2
+  '@rbxts/services': ^1.5.5

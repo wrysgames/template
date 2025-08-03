@@ -1,2 +1,3 @@
-import { makeHello } from "shared/module";
-print(makeHello("main.server.ts"));
+import { makeHello } from 'shared/module';
+
+print(makeHello('main.server.ts'));

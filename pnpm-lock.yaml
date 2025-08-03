@@ -6,9 +6,15 @@ settings:
 
 catalogs:
   default:
+    '@biomejs/biome':
+      specifier: ^2.1.3
+      version: 2.1.3
     '@rbxts/compiler-types':
       specifier: 3.0.0-types.0
       version: 3.0.0-types.0
+    '@rbxts/services':
+      specifier: ^1.5.5
+      version: 1.5.5
     '@rbxts/types':
       specifier: 1.0.867
       version: 1.0.867
@@ -21,7 +27,14 @@ catalogs:
 
 importers:
 
-  .: {}
+  .:
+    devDependencies:
+      '@biomejs/biome':
+        specifier: 'catalog:'
+        version: 2.1.3
+      '@wrysgames/biome-config':
+        specifier: workspace:*
+        version: link:tooling/biome
 
   apps/rogue:
     dependencies:
@@ -29,6 +42,9 @@ importers:
         specifier: workspace:*
         version: link:../../packages/input-manager
     devDependencies:
+      '@biomejs/biome':
+        specifier: 'catalog:'
+        version: 2.1.3
       '@rbxts/compiler-types':
         specifier: 'catalog:'
         version: 3.0.0-types.0
@@ -49,13 +65,23 @@ importers:
         version: 5.9.2
 
   packages/input-manager:
+    dependencies:
+      '@rbxts/services':
+        specifier: 'catalog:'
+        version: 1.5.5
     devDependencies:
+      '@biomejs/biome':
+        specifier: 'catalog:'
+        version: 2.1.3
       '@rbxts/compiler-types':
         specifier: 'catalog:'
         version: 3.0.0-types.0
       '@rbxts/types':
         specifier: 'catalog:'
         version: 1.0.867
+      '@wrysgames/biome-config':
+        specifier: workspace:*
+        version: link:../../tooling/biome
       '@wrysgames/tsconfig':
         specifier: workspace:*
         version: link:../../tooling/typescript
@@ -72,8 +98,64 @@ importers:
 
 packages:
 
+  '@biomejs/biome@2.1.3':
+    resolution: {integrity: sha512-KE/tegvJIxTkl7gJbGWSgun7G6X/n2M6C35COT6ctYrAy7SiPyNvi6JtoQERVK/VRbttZfgGq96j2bFmhmnH4w==}
+    engines: {node: '>=14.21.3'}
+    hasBin: true
+
+  '@biomejs/cli-darwin-arm64@2.1.3':
+    resolution: {integrity: sha512-LFLkSWRoSGS1wVUD/BE6Nlt2dSn0ulH3XImzg2O/36BoToJHKXjSxzPEMAqT9QvwVtk7/9AQhZpTneERU9qaXA==}
+    engines: {node: '>=14.21.3'}
+    cpu: [arm64]
+    os: [darwin]
+
+  '@biomejs/cli-darwin-x64@2.1.3':
+    resolution: {integrity: sha512-Q/4OTw8P9No9QeowyxswcWdm0n2MsdCwWcc5NcKQQvzwPjwuPdf8dpPPf4r+x0RWKBtl1FLiAUtJvBlri6DnYw==}
+    engines: {node: '>=14.21.3'}
+    cpu: [x64]
+    os: [darwin]
+
+  '@biomejs/cli-linux-arm64-musl@2.1.3':
+    resolution: {integrity: sha512-KXouFSBnoxAWZYDQrnNRzZBbt5s9UJkIm40hdvSL9mBxSSoxRFQJbtg1hP3aa8A2SnXyQHxQfpiVeJlczZt76w==}
+    engines: {node: '>=14.21.3'}
+    cpu: [arm64]
+    os: [linux]
+
+  '@biomejs/cli-linux-arm64@2.1.3':
+    resolution: {integrity: sha512-2hS6LgylRqMFmAZCOFwYrf77QMdUwJp49oe8PX/O8+P2yKZMSpyQTf3Eo5ewnsMFUEmYbPOskafdV1ds1MZMJA==}
+    engines: {node: '>=14.21.3'}
+    cpu: [arm64]
+    os: [linux]
+
+  '@biomejs/cli-linux-x64-musl@2.1.3':
+    resolution: {integrity: sha512-KaLAxnROouzIWtl6a0Y88r/4hW5oDUJTIqQorOTVQITaKQsKjZX4XCUmHIhdEk8zMnaiLZzRTAwk1yIAl+mIew==}
+    engines: {node: '>=14.21.3'}
+    cpu: [x64]
+    os: [linux]
+
+  '@biomejs/cli-linux-x64@2.1.3':
+    resolution: {integrity: sha512-NxlSCBhLvQtWGagEztfAZ4WcE1AkMTntZV65ZvR+J9jp06+EtOYEBPQndA70ZGhHbEDG57bR6uNvqkd1WrEYVA==}
+    engines: {node: '>=14.21.3'}
+    cpu: [x64]
+    os: [linux]
+
+  '@biomejs/cli-win32-arm64@2.1.3':
+    resolution: {integrity: sha512-V9CUZCtWH4u0YwyCYbQ3W5F4ZGPWp2C2TYcsiWFNNyRfmOW1j/TY/jAurl33SaRjgZPO5UUhGyr9m6BN9t84NQ==}
+    engines: {node: '>=14.21.3'}
+    cpu: [arm64]
+    os: [win32]
+
+  '@biomejs/cli-win32-x64@2.1.3':
+    resolution: {integrity: sha512-dxy599q6lgp8ANPpR8sDMscwdp9oOumEsVXuVCVT9N2vAho8uYXlCz53JhxX6LtJOXaE73qzgkGQ7QqvFlMC0g==}
+    engines: {node: '>=14.21.3'}
+    cpu: [x64]
+    os: [win32]
+
   '@rbxts/compiler-types@3.0.0-types.0':
     resolution: {integrity: sha512-VGOHJPoL7+56NTatMGqQj3K7xWuzEV+aP4QD5vZiHu+bcff3kiTmtoadaF6NkJrmwfFAvbsd4Dg764ZjWNceag==}
+
+  '@rbxts/services@1.5.5':
+    resolution: {integrity: sha512-Hu7QH2ecefS60zpakKG3T2vgABydoOJqpSG7nXr59wFAbPk/cA+OcsntYPHUWyHAat0VFGZ5jNZLTLdiqfssvg==}
 
   '@rbxts/types@1.0.867':
     resolution: {integrity: sha512-myYpy+9pPoVW3soJfv/ljUEGI62eeWlS+/iE3wORw/ND/QmVSJ5GLCfNPC//Wl8xqAZdd7Jv1WEtU4+TWBOnwA==}
@@ -283,7 +365,44 @@ packages:
 
 snapshots:
 
+  '@biomejs/biome@2.1.3':
+    optionalDependencies:
+      '@biomejs/cli-darwin-arm64': 2.1.3
+      '@biomejs/cli-darwin-x64': 2.1.3
+      '@biomejs/cli-linux-arm64': 2.1.3
+      '@biomejs/cli-linux-arm64-musl': 2.1.3
+      '@biomejs/cli-linux-x64': 2.1.3
+      '@biomejs/cli-linux-x64-musl': 2.1.3
+      '@biomejs/cli-win32-arm64': 2.1.3
+      '@biomejs/cli-win32-x64': 2.1.3
+
+  '@biomejs/cli-darwin-arm64@2.1.3':
+    optional: true
+
+  '@biomejs/cli-darwin-x64@2.1.3':
+    optional: true
+
+  '@biomejs/cli-linux-arm64-musl@2.1.3':
+    optional: true
+
+  '@biomejs/cli-linux-arm64@2.1.3':
+    optional: true
+
+  '@biomejs/cli-linux-x64-musl@2.1.3':
+    optional: true
+
+  '@biomejs/cli-linux-x64@2.1.3':
+    optional: true
+
+  '@biomejs/cli-win32-arm64@2.1.3':
+    optional: true
+
+  '@biomejs/cli-win32-x64@2.1.3':
+    optional: true
+
   '@rbxts/compiler-types@3.0.0-types.0': {}
+
+  '@rbxts/services@1.5.5': {}
 
   '@rbxts/types@1.0.867': {}
 
