@@ -58,4 +58,5 @@ jobs:
       - name: Deploy project
         run: mantle deploy
         env:
+          ROBLOSECURITY: ${{ secrets.ROBLOSECURITY }}
           MANTLE_OPEN_CLOUD_API_KEY: ${{ secrets.MANTLE_OPEN_CLOUD_API_KEY }}
