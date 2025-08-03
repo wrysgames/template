@@ -1,10 +1,10 @@
-name: CI
+name: Development Build
 
 on:
   push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+    branches:
+        - dev
+        - dev*
   workflow_dispatch:
 
 permissions:
@@ -46,3 +46,28 @@ jobs:
 
       - name: Build
         run: rojo build --output game.rbxl
+
+      - name: Upload place artifact
+        uses: actions/upload-artifact@v4
+        with:
+          path: game.rbxlx
+
+  deploy:
+    runs-on: windows-latest
+    environment: production
+    needs: build
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: CompeyDev/setup-rokit@v0.1.2
+
+      - name: Download place artifact
+        uses: actions/download-artifact@v4
+      
+      - name: Deploy game
+        run: mantle deploy --environment dev
+        env:
+          ROBLOSECURITY: ${{ secrets.ROBLOSECURITY }}
+          MANTLE_OPEN_CLOUD_API_KEY: ${{ secrets.MANTLE_OPEN_CLOUD_API_KEY }}
+      
+

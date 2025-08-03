@@ -7,7 +7,8 @@
     "scripts": {
         "build": "rbxtsc",
         "watch": "rbxtsc -w",
-        "lint": "biome check --write .",
+        "lint": "biome lint .",
+        "format": "biome check --write .",
         "license": "license-checker --production --summary"
     },
     "keywords": [],
