@@ -6,7 +6,7 @@
     "scripts": {
         "build": "rbxtsc",
         "watch": "rbxtsc -w",
-        "format": "biome check --write ."
+        "lint": "biome check --write ."
     },
     "keywords": [],
     "author": "",
