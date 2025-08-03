@@ -16,7 +16,7 @@ jobs:
       # Checkout your Git repo
       - uses: actions/checkout@v4
       # Install foreman and all foreman tools (rojo and mantle)
-      - uses: kalrnlo/setup-rokit@v1
+      - uses: raild3x/setup-rokit@v0.1.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
       # Build the project with rojo
@@ -28,5 +28,3 @@ jobs:
         env:
           ROBLOSECURITY: ${{ secrets.ROBLOSECURITY }}
           MANTLE_OPEN_CLOUD_API_KEY: ${{ secrets.MANTLE_OPEN_CLOUD_API_KEY }}
-          MANTLE_AWS_ACCESS_KEY_ID: ${{ secrets.MANTLE_AWS_ACCESS_KEY_ID }}
-          MANTLE_AWS_SECRET_ACCESS_KEY: ${{ secrets.MANTLE_AWS_SECRET_ACCESS_KEY }}
