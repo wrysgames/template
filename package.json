@@ -9,7 +9,7 @@
     "watch": "rbxtsc -w",
     "lint": "biome lint .",
     "format": "biome check --write .",
-    "license": "license-checker --production --summary",
+    "license": "license-checker --excludePrivatePackages --production --summary",
     "prepare": "husky"
   },
   "keywords": [],
