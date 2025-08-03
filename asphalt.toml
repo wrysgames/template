@@ -1,6 +1,6 @@
-asset_dir = "assets"
+asset_dir = "assets/game"
 exclude_assets = []
-write_dir = "src/shared"
+write_dir = "src/shared/assets"
 
 [creator]
 type = "user"
@@ -9,5 +9,5 @@ id = 8838265327
 [codegen]
 output_name = "assets"
 typescript = true
-style = "nested"
+style = "flat"
 strip_extension = false

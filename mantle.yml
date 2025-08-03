@@ -5,7 +5,7 @@ environments:
     targetNamePrefix: environmentLabel
     targetAccess: private
 
-  - label: prod
+  - label: production
     branches:
       - main
     targetAccess: public
@@ -16,8 +16,8 @@ target:
       genre: building
     places:
       start:
-        file: development.rbxl
+        file: game.rbxlx
         configuration:
-          name: I changed the Mantle config
+          name: Game Template
           description: |-
             Made with Mantle
