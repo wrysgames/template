@@ -1,0 +1,24 @@
+{
+  "name": "@client/input-manager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "rbxtsc",
+    "watch": "rbxtsc -w"
+  },
+  "files": [
+		"out"
+	],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.13.1",
+  "devDependencies": {
+    "@wrysgames/tsconfig": "workspace:*",
+    "@rbxts/compiler-types": "catalog:",
+    "@rbxts/types": "catalog:",
+    "roblox-ts": "catalog:",
+    "typescript": "catalog:"
+  }
+}

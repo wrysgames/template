@@ -1,0 +1,11 @@
+{
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"extends": "@wrysgames/tsconfig/base.json",
+	"compilerOptions": {
+		"rootDir": "src",
+		"outDir": "out",
+		"baseUrl": "src",
+		"tsBuildInfoFile": "out/tsconfig.tsbuildinfo",
+		"typeRoots": ["node_modules/@rbxts", "node_modules/@server", "node_modules/@client", "node_modules/@shared"]
+	}
+}

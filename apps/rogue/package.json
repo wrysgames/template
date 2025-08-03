@@ -1,0 +1,25 @@
+{
+  "name": "rogue",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "rbxtsc",
+    "watch": "rbxtsc -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.13.1",
+  "dependencies": {
+    "@client/input-manager": "workspace:*"
+  },
+  "devDependencies": {
+    "@wrysgames/biome-config": "workspace:*",
+    "@wrysgames/tsconfig": "workspace:*",
+    "@rbxts/compiler-types": "catalog:",
+    "@rbxts/types": "catalog:",
+    "roblox-ts": "catalog:",
+    "typescript": "catalog:"
+  }
+}
