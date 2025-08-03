@@ -1,5 +1,6 @@
 {
-    "name": "monorepo",
+    "name": "game-template",
+    "private": true,
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
@@ -11,7 +12,7 @@
     },
     "keywords": [],
     "author": "",
-    "license": "ISC",
+    "license": "UNLICENSED",
     "packageManager": "pnpm@10.13.1",
     "devDependencies": {
         "@biomejs/biome": "catalog:",
