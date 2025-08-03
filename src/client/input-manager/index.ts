@@ -1,5 +1,5 @@
 import { UserInputService } from '@rbxts/services';
-import { InputActionBinding } from 'types';
+import { InputActionBinding } from 'client/input-manager/types';
 
 class InputManager {
 	private static singleton: InputManager | undefined;

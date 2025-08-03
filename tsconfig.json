@@ -1,6 +1,6 @@
 {
-    "$schema": "https://json.schemastore.org/tsconfig",
-    "compilerOptions": {
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"compilerOptions": {
 		"allowSyntheticDefaultImports": true,
 		"downlevelIteration": true,
 		"jsx": "react",
@@ -16,6 +16,16 @@
 		"strict": true,
 		"target": "ESNext",
 		"incremental": true,
-		"declaration": true
+		"declaration": true,
+
+		"typeRoots": ["node_modules/@rbxts", "node_modules/@flamework"],
+
+		"baseUrl": "src",
+		"rootDir": "src",
+		"outDir": "out/",
+
+		"noUncheckedIndexedAccess": true,
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": true
 	}
 }

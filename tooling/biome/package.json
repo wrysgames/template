@@ -1,8 +1,0 @@
-{
-    "name": "@wrysgames/biome-config",
-    "private": true,
-    "version": "0.1.0",
-    "exports": {
-        ".": "./biome.json"
-    }
-}
