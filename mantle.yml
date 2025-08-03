@@ -1,3 +1,5 @@
+owner: personal
+
 environments:
   - label: dev
     branches:
