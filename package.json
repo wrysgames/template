@@ -1,33 +1,33 @@
 {
-  "name": "game-template",
-  "private": true,
-  "version": "0.1.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "build": "rbxtsc",
-    "watch": "rbxtsc -w",
-    "lint": "biome lint .",
-    "format": "biome check --write .",
-    "license": "license-checker --excludePrivatePackages --production --summary",
-    "prepare": "husky"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "UNLICENSED",
-  "packageManager": "pnpm@10.13.1",
-  "devDependencies": {
-    "@biomejs/biome": "^2.1.3",
-    "@commitlint/cli": "^19.8.1",
-    "@commitlint/config-conventional": "^19.8.1",
-    "@rbxts/compiler-types": "3.0.0-types.0",
-    "@rbxts/types": "1.0.867",
-    "husky": "^9.1.7",
-    "license-checker": "^25.0.1",
-    "roblox-ts": "^3.0.0",
-    "typescript": "5.9.2"
-  },
-  "dependencies": {
-    "@rbxts/services": "^1.5.5"
-  }
+    "name": "game-template",
+    "private": true,
+    "version": "0.1.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "build": "rbxtsc",
+        "watch": "rbxtsc -w",
+        "lint": "biome lint .",
+        "format": "biome check --write .",
+        "license": "license-checker --excludePrivatePackages --production --summary",
+        "prepare": "husky"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "UNLICENSED",
+    "packageManager": "pnpm@10.13.1",
+    "devDependencies": {
+        "@biomejs/biome": "^2.1.3",
+        "@commitlint/cli": "^19.8.1",
+        "@commitlint/config-conventional": "^19.8.1",
+        "@rbxts/compiler-types": "3.0.0-types.0",
+        "@rbxts/types": "1.0.867",
+        "husky": "^9.1.7",
+        "license-checker": "^25.0.1",
+        "roblox-ts": "^3.0.0",
+        "typescript": "5.9.2"
+    },
+    "dependencies": {
+        "@rbxts/services": "^1.5.5"
+    }
 }
