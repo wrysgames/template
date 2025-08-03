@@ -16,6 +16,7 @@
 		"strict": true,
 		"target": "ESNext",
 		"typeRoots": ["node_modules/@rbxts", "node_modules/@server", "node_modules/@client", "node_modules/@shared"],
-		"incremental": true
+		"incremental": true,
+		"declaration": true
 	}
 }

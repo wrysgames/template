@@ -10,6 +10,7 @@
   "files": [
 		"out"
 	],
+  "types": "out",
   "keywords": [],
   "author": "",
   "license": "ISC",
