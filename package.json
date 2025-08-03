@@ -10,6 +10,7 @@
     "lint": "biome lint .",
     "format": "biome check --write .",
     "license": "license-checker --production --summary",
+    "bump-version": "automatic-versioning --name=game-template",
     "prepare": "husky"
   },
   "keywords": [],
@@ -27,5 +28,8 @@
     "release-please": "^17.1.1",
     "roblox-ts": "catalog:",
     "typescript": "catalog:"
+  },
+  "dependencies": {
+    "@sliit-foss/automatic-versioning": "^3.0.4"
   }
 }
