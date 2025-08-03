@@ -1,26 +1,31 @@
 {
-    "name": "game-template",
-    "private": true,
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "build": "rbxtsc",
-        "watch": "rbxtsc -w",
-        "lint": "biome lint .",
-        "format": "biome check --write .",
-        "license": "license-checker --production --summary"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "UNLICENSED",
-    "packageManager": "pnpm@10.13.1",
-    "devDependencies": {
-        "@biomejs/biome": "catalog:",
-        "@rbxts/compiler-types": "catalog:",
-        "@rbxts/types": "catalog:",
-        "roblox-ts": "catalog:",
-        "typescript": "catalog:",
-        "license-checker": "^25.0.1"
-    }
+  "name": "game-template",
+  "private": true,
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "rbxtsc",
+    "watch": "rbxtsc -w",
+    "lint": "biome lint .",
+    "format": "biome check --write .",
+    "license": "license-checker --production --summary",
+    "prepare": "husky"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "UNLICENSED",
+  "packageManager": "pnpm@10.13.1",
+  "devDependencies": {
+    "@biomejs/biome": "catalog:",
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "@rbxts/compiler-types": "catalog:",
+    "@rbxts/types": "catalog:",
+    "husky": "^9.1.7",
+    "license-checker": "^25.0.1",
+    "release-please": "^17.1.1",
+    "roblox-ts": "catalog:",
+    "typescript": "catalog:"
+  }
 }
