@@ -1,0 +1,32 @@
+name: Deploy
+ 
+on:
+  # Enable manual deploys from the GitHub UI
+  workflow_dispatch:
+  # Enable automatic deploys whenever code is pushed to the dev or main branches
+  push:
+    branches:
+      - dev
+      - main
+ 
+jobs:
+  build-and-deploy:
+    runs-on: windows-latest
+    steps:
+      # Checkout your Git repo
+      - uses: actions/checkout@v4
+      # Install foreman and all foreman tools (rojo and mantle)
+      - uses: kalrnlo/setup-rokit@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      # Build the project with rojo
+      - name: Build project
+        run: rojo build --output game.rbxlx
+      # Deploy the project with mantle
+      - name: Deploy project
+        run: mantle deploy
+        env:
+          ROBLOSECURITY: ${{ secrets.ROBLOSECURITY }}
+          MANTLE_OPEN_CLOUD_API_KEY: ${{ secrets.MANTLE_OPEN_CLOUD_API_KEY }}
+          MANTLE_AWS_ACCESS_KEY_ID: ${{ secrets.MANTLE_AWS_ACCESS_KEY_ID }}
+          MANTLE_AWS_SECRET_ACCESS_KEY: ${{ secrets.MANTLE_AWS_SECRET_ACCESS_KEY }}
