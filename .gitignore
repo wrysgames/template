@@ -5,3 +5,8 @@ out/
 
 .env*
 !.env.example
+
+*.rbxl
+*.rbxlx
+
+flamework.build

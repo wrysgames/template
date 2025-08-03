@@ -37,7 +37,7 @@ jobs:
         run: pnpm build --verbose
 
       - name: Build project
-        run: rojo build --output game.rbxl
+        run: rojo build --output game.rbxlx
 
       - name: Upload place artifact
         uses: actions/upload-artifact@v4
@@ -46,7 +46,7 @@ jobs:
           path: game.rbxlx
 
   deploy:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     environment: production
     needs: build
 
@@ -57,7 +57,7 @@ jobs:
       - name: Download place artifact
         uses: actions/download-artifact@v4
         with:
-          name: gamebxlx
+          name: game.rbxlx
       
       - name: Deploy game
         run: mantle deploy --environment production
