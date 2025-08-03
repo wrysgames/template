@@ -19,7 +19,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     strategy:
       matrix:
         node-version: [24]
@@ -36,6 +36,10 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: pnpm
 
+      - uses: raild3x/setup-rokit@v0.1.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Install dependencies
         run: pnpm install
 
@@ -44,3 +48,14 @@ jobs:
 
       - name: License
         run: pnpm license
+
+      - name: Build roblox-ts
+        run: pnpm build
+
+      - name: Build rojo
+        run: rojo build --output development.rbxl
+
+      - name: Deploy project
+        run: mantle deploy
+        env:
+          MANTLE_OPEN_CLOUD_API_KEY: ${{ secrets.MANTLE_OPEN_CLOUD_API_KEY }}
