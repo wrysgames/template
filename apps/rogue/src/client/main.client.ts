@@ -1,3 +1,10 @@
-import { makeHello } from 'shared/module';
+import InputManager from '@client/input-manager';
 
-print(makeHello('main.client.ts'));
+const manager = InputManager.getInstance();
+manager.bindAction({
+    name: "test",
+    callback: () => {
+        print('button pressed');
+    },
+    keys: [Enum.KeyCode.A]
+})

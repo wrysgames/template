@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
+    "build": "nx run-many -t build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -11,7 +13,11 @@
   "license": "ISC",
   "packageManager": "pnpm@10.13.1",
   "devDependencies": {
+    "@biomejs/biome": "catalog:",
     "@wrysgames/biome-config": "workspace:*",
-    "@biomejs/biome": "catalog:"
+    "nx": "20.8.2"
+  },
+  "dependencies": {
+    "lerna": "^8.2.3"
   }
 }

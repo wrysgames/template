@@ -1,29 +1,35 @@
 {
-	"name": "@client/input-manager",
-	"version": "1.0.0",
-	"description": "",
-	"main": "index.js",
-	"scripts": {
-		"build": "rbxtsc",
-		"watch": "rbxtsc -w",
-		"format": "biome check --write ."
-	},
-	"files": ["out"],
-	"types": "out",
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
-	"packageManager": "pnpm@10.13.1",
-	"dependencies": {
-		"@rbxts/services": "catalog:"
-	},
-	"devDependencies": {
-		"@wrysgames/biome-config": "workspace:*",
-		"@wrysgames/tsconfig": "workspace:*",
-		"@rbxts/compiler-types": "catalog:",
-		"@rbxts/types": "catalog:",
-		"@biomejs/biome": "catalog:",
-		"roblox-ts": "catalog:",
-		"typescript": "catalog:"
-	}
+  "name": "@client/input-manager",
+  "version": "0.1.0",
+  "description": "",
+  "main": "out/init.lua",
+  "scripts": {
+    "build": "rbxtsc",
+    "watch": "rbxtsc -w",
+    "prepublishOnly": "pnpm run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.13.1",
+  "types": "out/index.d.ts",
+  "files": [
+    "out",
+    "!**/*.tsbuildinfo"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+	"@rbxts/services": "catalog:"
+  },
+  "devDependencies": {
+	"@wrysgames/tsconfig": "workspace:*",
+	"@wrysgames/biome-config": "workspace:*",
+    "@rbxts/compiler-types": "catalog:",
+    "@rbxts/types": "catalog:",
+	"@biomejs/biome": "catalog:",
+    "roblox-ts": "catalog:",
+    "typescript": "catalog:"
+  }
 }
