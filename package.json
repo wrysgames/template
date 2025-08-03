@@ -24,7 +24,6 @@
     "@rbxts/types": "catalog:",
     "husky": "^9.1.7",
     "license-checker": "^25.0.1",
-    "release-please": "^17.1.1",
     "roblox-ts": "catalog:",
     "typescript": "catalog:"
   }
