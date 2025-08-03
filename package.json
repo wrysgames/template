@@ -6,7 +6,8 @@
     "scripts": {
         "build": "rbxtsc",
         "watch": "rbxtsc -w",
-        "lint": "biome check --write ."
+        "lint": "biome check --write .",
+        "license": "license-checker --production --summary"
     },
     "keywords": [],
     "author": "",
@@ -17,6 +18,7 @@
         "@rbxts/compiler-types": "catalog:",
         "@rbxts/types": "catalog:",
         "roblox-ts": "catalog:",
-        "typescript": "catalog:"
+        "typescript": "catalog:",
+        "license-checker": "^25.0.1"
     }
 }
