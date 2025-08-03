@@ -12,9 +12,6 @@ catalogs:
     '@rbxts/compiler-types':
       specifier: 3.0.0-types.0
       version: 3.0.0-types.0
-    '@rbxts/services':
-      specifier: ^1.5.5
-      version: 1.5.5
     '@rbxts/types':
       specifier: 1.0.867
       version: 1.0.867
@@ -35,9 +32,6 @@ importers:
       '@rbxts/compiler-types':
         specifier: 'catalog:'
         version: 3.0.0-types.0
-      '@rbxts/services':
-        specifier: 'catalog:'
-        version: 1.5.5
       '@rbxts/types':
         specifier: 'catalog:'
         version: 1.0.867
@@ -105,9 +99,6 @@ packages:
 
   '@rbxts/compiler-types@3.0.0-types.0':
     resolution: {integrity: sha512-VGOHJPoL7+56NTatMGqQj3K7xWuzEV+aP4QD5vZiHu+bcff3kiTmtoadaF6NkJrmwfFAvbsd4Dg764ZjWNceag==}
-
-  '@rbxts/services@1.5.5':
-    resolution: {integrity: sha512-Hu7QH2ecefS60zpakKG3T2vgABydoOJqpSG7nXr59wFAbPk/cA+OcsntYPHUWyHAat0VFGZ5jNZLTLdiqfssvg==}
 
   '@rbxts/types@1.0.867':
     resolution: {integrity: sha512-myYpy+9pPoVW3soJfv/ljUEGI62eeWlS+/iE3wORw/ND/QmVSJ5GLCfNPC//Wl8xqAZdd7Jv1WEtU4+TWBOnwA==}
@@ -353,8 +344,6 @@ snapshots:
     optional: true
 
   '@rbxts/compiler-types@3.0.0-types.0': {}
-
-  '@rbxts/services@1.5.5': {}
 
   '@rbxts/types@1.0.867': {}
 

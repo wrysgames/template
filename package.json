@@ -1,23 +1,22 @@
 {
-	"name": "monorepo",
-	"version": "1.0.0",
-	"description": "",
-	"main": "index.js",
-	"type": "module",
-	"scripts": {
-		"format": "biome check --write .",
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
-	"packageManager": "pnpm@10.13.1",
-	"devDependencies": {
-		"@biomejs/biome": "catalog:",
-		"@rbxts/compiler-types": "catalog:",
-		"roblox-ts": "catalog:",
-		"typescript": "catalog:",
-		"@rbxts/types": "catalog:",
-		"@rbxts/services": "catalog:"
-	}
+    "name": "monorepo",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "build": "rbxtsc",
+        "watch": "rbxtsc -w",
+        "format": "biome check --write ."
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "packageManager": "pnpm@10.13.1",
+    "devDependencies": {
+        "@biomejs/biome": "catalog:",
+        "@rbxts/compiler-types": "catalog:",
+        "@rbxts/types": "catalog:",
+        "roblox-ts": "catalog:",
+        "typescript": "catalog:"
+    }
 }
