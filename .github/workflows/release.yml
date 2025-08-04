@@ -42,7 +42,7 @@ jobs:
       - name: Upload place artifact
         uses: actions/upload-artifact@v4
         with:
-          name: game.rbxlx
+          name: game
           path: game.rbxlx
 
   deploy:
@@ -57,7 +57,7 @@ jobs:
       - name: Download place artifact
         uses: actions/download-artifact@v4
         with:
-          name: game.rbxlx
+          name: game
       
       - name: Deploy game
         run: mantle deploy --environment production
