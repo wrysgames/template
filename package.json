@@ -30,6 +30,7 @@
         "typescript": "5.9.2"
     },
     "dependencies": {
-        "@rbxts/services": "^1.5.5"
+        "@rbxts/services": "^1.5.5",
+        "rbxts-transform-debug": "^2.2.0"
     }
 }
