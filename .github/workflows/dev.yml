@@ -53,7 +53,7 @@ jobs:
           path: game.rbxlx
 
   deploy:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     environment: development
     needs: build
 
