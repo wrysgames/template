@@ -19,9 +19,7 @@
         "declaration": true,
 
         "typeRoots": ["node_modules/@rbxts", "node_modules/@flamework"],
-        "plugins": [
-            { "transform": "rbxts-transform-debug" },
-        ],
+        "plugins": [{ "transform": "rbxts-transform-debug" }],
 
         "baseUrl": "src",
         "rootDir": "src",

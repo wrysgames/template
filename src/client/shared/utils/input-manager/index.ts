@@ -12,7 +12,10 @@ export interface InputActionBinding {
 
     context?: InputContext;
     consumeInput?: boolean;
+    priority?: number;
 }
+
+const DEFAULT_PRIORITY = 999;
 
 export class InputManager {
     private readonly bindings: Map<string, InputActionBinding[]> = new Map();
@@ -20,10 +23,14 @@ export class InputManager {
     private currentContext: string = 'Game';
 
     private constructor() {
-        UserInputService.InputBegan.Connect((input, gameProcessed) => {
+        UserInputService.InputBegan.ConnectParallel((input, gameProcessed) => {
             if (gameProcessed) return;
 
-            for (const [_, bindings] of this.bindings) {
+            for (let [_, bindings] of this.bindings) {
+                // sort based on priority
+                bindings = bindings.sort((a, b) => {
+                    return (a.priority ?? DEFAULT_PRIORITY) < (b.priority ?? DEFAULT_PRIORITY);
+                });
                 for (const binding of bindings) {
                     const matchesKey = binding.keys && binding.keys.includes(input.KeyCode);
                     const matchesInputType = binding.inputTypes && binding.inputTypes.includes(input.UserInputType);
