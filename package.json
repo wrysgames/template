@@ -9,7 +9,7 @@
         "dev": "rbxtsc -w",
         "watch": "rbxtsc -w",
         "serve": "rojo serve",
-        "lint": "biome lint .",
+        "lint": "biome lint . --error-on-warnings",
         "format": "biome check --write .",
         "license": "license-checker --excludePrivatePackages --production --summary",
         "prepare": "husky"
