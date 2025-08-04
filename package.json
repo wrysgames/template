@@ -6,7 +6,9 @@
     "main": "index.js",
     "scripts": {
         "build": "rbxtsc",
+        "dev": "rbxtsc -w",
         "watch": "rbxtsc -w",
+        "serve": "rojo serve",
         "lint": "biome lint .",
         "format": "biome check --write .",
         "license": "license-checker --excludePrivatePackages --production --summary",
