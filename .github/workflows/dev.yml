@@ -64,6 +64,8 @@ jobs:
 
       - name: Download place artifact
         uses: actions/download-artifact@v4
+        with:
+          name: game.rbxlx
       
       - name: Deploy game
         run: mantle deploy --environment dev

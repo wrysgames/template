@@ -58,9 +58,6 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: game.rbxlx
-
-      - name: Move place file
-        run: mv game.rbxlx/game.rbxlx .
       
       - name: Deploy game
         run: mantle deploy --environment production
