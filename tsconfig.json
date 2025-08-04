@@ -20,7 +20,7 @@
 
         "typeRoots": ["node_modules/@rbxts", "node_modules/@flamework"],
         "plugins": [
-            { "transform": "rbxts-transformer-debug" },
+            { "transform": "rbxts-transform-debug" },
         ],
 
         "baseUrl": "src",
