@@ -45,7 +45,7 @@ jobs:
         run: pnpm build --verbose
 
       - name: Build
-        run: rojo build --output game.rbxlx
+        run: pnpm rojo:build
 
       - name: Upload place artifact
         uses: actions/upload-artifact@v4
@@ -73,4 +73,3 @@ jobs:
           ROBLOSECURITY: ${{ secrets.ROBLOSECURITY }}
           MANTLE_OPEN_CLOUD_API_KEY: ${{ secrets.MANTLE_OPEN_CLOUD_API_KEY }}
       
-

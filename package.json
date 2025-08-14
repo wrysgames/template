@@ -5,10 +5,11 @@
     "description": "",
     "main": "index.js",
     "scripts": {
+        "rojo:build": "rojo build -o game.rbxlx",
+        "rojo:serve": "rojo serve",
         "build": "rbxtsc",
         "dev": "rbxtsc -w",
         "watch": "rbxtsc -w",
-        "serve": "rojo serve",
         "lint": "biome lint . --error-on-warnings",
         "format": "biome check --write .",
         "license": "license-checker --excludePrivatePackages --production --summary",

@@ -37,10 +37,10 @@
             }
         },
         "Workspace": {
-            "$className": "Workspace",
-            "$properties": {
-                "FilteringEnabled": true
-            }
+            "$path": "assets/maps/Workspace.rbxm"
+        },
+        "Lighting": {
+            "$path": "assets/maps/Lighting.rbxm"
         },
         "HttpService": {
             "$className": "HttpService",

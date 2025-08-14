@@ -45,4 +45,4 @@ jobs:
         run: pnpm build --verbose
 
       - name: Build
-        run: rojo build --output game.rbxl
+        run: pnpm rojo:build
