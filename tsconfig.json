@@ -7,7 +7,7 @@
         "jsxFactory": "React.createElement",
         "jsxFragmentFactory": "React.Fragment",
         "module": "commonjs",
-        "moduleResolution": "Node",
+        "moduleResolution": "node16",
         "noLib": true,
         "resolveJsonModule": true,
         "experimentalDecorators": true,
@@ -19,7 +19,7 @@
         "declaration": true,
 
         "typeRoots": ["node_modules/@rbxts", "node_modules/@flamework"],
-        "plugins": [{ "transform": "rbxts-transform-debug" }, { "transform": "rbxts-transformer-flamework" }],
+        "plugins": [{ "transform": "rbxts-transformer-flamework" }],
 
         "baseUrl": "src",
         "rootDir": "src",
