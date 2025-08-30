@@ -1,7 +1,6 @@
-import { ProfilerSummary } from "./summary";
+import { ProfilerSummary } from './summary';
 
 const MAX_TICKS = 100;
-
 
 export class Profiler {
 	private isRunning: boolean = false;
@@ -31,13 +30,13 @@ export class Profiler {
 		// Set the current array index to the current tick - lastTick
 		const timeElapsed = currentTick - this.lastTick;
 
-		this.ticks.push(timeElapsed)
+		this.ticks.push(timeElapsed);
 		this.isRunning = false;
 
 		return timeElapsed;
 	}
 
-    public generateSummary(): ProfilerSummary {
-        return new ProfilerSummary(this.ticks);
-    }
+	public generateSummary(): ProfilerSummary {
+		return new ProfilerSummary(this.ticks);
+	}
 }

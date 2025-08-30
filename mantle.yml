@@ -1,12 +1,6 @@
 owner: personal
 
 environments:
-  - label: dev
-    branches:
-      - main
-    targetNamePrefix: environmentLabel
-    targetAccess: private
-
   - label: production
     branches:
       - main
