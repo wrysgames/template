@@ -8,5 +8,7 @@ out/
 
 *.rbxl
 *.rbxlx
+*.rbxl.lock
+*.rbxlx.lock
 
 flamework.build
