@@ -13,7 +13,7 @@ export class Profiler {
 		}
 
 		this.isRunning = true;
-		this.lastTick = os.clock();
+		this.lastTick = os.clock()
 	}
 
 	public tok(): number {
@@ -27,10 +27,9 @@ export class Profiler {
 			this.ticks.shift();
 		}
 
-		// Set the current array index to the current tick - lastTick
 		const timeElapsed = currentTick - this.lastTick;
 
-		this.ticks.push(timeElapsed);
+		this.ticks.push(timeElapsed * 1000); // convert to milliseconds
 		this.isRunning = false;
 
 		return timeElapsed;

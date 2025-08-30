@@ -5,7 +5,7 @@ export class ProfilerSummary implements Stringifiable {
 	public averageTimeInMilliseconds: number;
 
 	constructor(ticks: number[]) {
-		this.averageTimeInMilliseconds = average(ticks) * 1000;
+		this.averageTimeInMilliseconds = average(ticks);
 	}
 
 	public toString(): string {

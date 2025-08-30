@@ -1,29 +1,14 @@
 import { UserInputService } from '@rbxts/services';
-
-export type InputContext = string;
-
-export interface InputActionBinding {
-	name: string;
-
-	keys?: Enum.KeyCode[];
-	inputTypes?: Enum.UserInputType[];
-
-	callback: (inputObject: InputObject, gameProcessed: boolean) => void;
-
-	context?: InputContext;
-	consumeInput?: boolean;
-	priority?: number;
-}
+import { InputActionBinding } from './types';
 
 const DEFAULT_PRIORITY = 999;
 
-export class InputManager {
+class InputManager {
 	private readonly bindings: Map<string, InputActionBinding[]> = new Map();
-	private static readonly instance: InputManager = new InputManager();
 	private currentContext: string = 'Game';
 
-	private constructor() {
-		UserInputService.InputBegan.ConnectParallel((input, gameProcessed) => {
+	constructor() {
+		UserInputService.InputBegan.Connect((input, gameProcessed) => {
 			if (gameProcessed) return;
 
 			for (let [_, bindings] of this.bindings) {
@@ -45,10 +30,6 @@ export class InputManager {
 		});
 	}
 
-	public static getInstance(): InputManager {
-		return this.instance;
-	}
-
 	public bindAction(binding: InputActionBinding): void {
 		if (!this.bindings.has(binding.name)) {
 			this.bindings.set(binding.name, []);
@@ -68,3 +49,5 @@ export class InputManager {
 		this.bindings.clear();
 	}
 }
+
+export = new InputManager();
