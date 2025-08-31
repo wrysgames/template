@@ -2,10 +2,10 @@ import { Character } from 'shared/types/character';
 import { ClientAnimationManager } from '.';
 
 export class ClientAnimationFactory {
-	private static characters: Map<Character, ClientAnimationManager> = new Map();
+	private static characters: Map<Instance, ClientAnimationManager> = new Map();
 	private constructor() {}
 
-	public static getManager(character: Character): ClientAnimationManager {
+	public static createOrGetManager(character: Character): ClientAnimationManager {
 		const manager = this.characters.get(character);
 		if (!manager) {
 			const newManager = new ClientAnimationManager(character);
