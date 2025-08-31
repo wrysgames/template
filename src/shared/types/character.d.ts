@@ -37,15 +37,15 @@ export interface R15Character extends Character {
 	RightUpperArm: BasePart;
 	RightLowerArm: BasePart;
 
-    LeftUpperArm: BasePart;
-    LeftLowerArm: BasePart;
-    LeftHand: BasePart;
+	LeftUpperArm: BasePart;
+	LeftLowerArm: BasePart;
+	LeftHand: BasePart;
 
-    LeftUpperLeg: BasePart;
-    LeftLowerLeg: BasePart;
-    LeftFoot: BasePart;
+	LeftUpperLeg: BasePart;
+	LeftLowerLeg: BasePart;
+	LeftFoot: BasePart;
 
-    RightUpperLeg: BasePart;
-    RightLowerLeg: BasePart;
-    RightFoot: BasePart;
+	RightUpperLeg: BasePart;
+	RightLowerLeg: BasePart;
+	RightFoot: BasePart;
 }

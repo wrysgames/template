@@ -13,7 +13,7 @@ export class Profiler {
 		}
 
 		this.isRunning = true;
-		this.lastTick = os.clock()
+		this.lastTick = os.clock();
 	}
 
 	public tok(): number {

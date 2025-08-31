@@ -1,3 +1,3 @@
 export function getCurrentTimeInMilliseconds(): number {
-    return DateTime.now().UnixTimestampMillis;
+	return DateTime.now().UnixTimestampMillis;
 }
