@@ -1,6 +1,7 @@
-import { Controller, OnInit, OnStart } from '@flamework/core';
+import { Controller, OnStart } from '@flamework/core';
 import type { Logger } from '@rbxts/log';
 import { Players } from '@rbxts/services';
+import Signal from '@rbxts/signal';
 import { promiseTree } from '@rbxts/validate-tree';
 import { ClientAnimationFactory } from 'client/shared/utils/client-animation/factory';
 import { Character } from 'shared/types/character';
@@ -15,6 +16,9 @@ import { characterSchema } from 'shared/utils/character/schema';
 @Controller()
 export class CharacterController implements OnStart {
 	private character?: Character;
+
+	public readonly onCharacterAdded: Signal<(character: Character) => void> = new Signal();
+	public readonly onCharacterRemoving = new Signal();
 
 	constructor(private readonly logger: Logger) {}
 
@@ -62,6 +66,7 @@ export class CharacterController implements OnStart {
 
 		this.listenForCharacterRemoving(model);
 		this.onRigLoaded(rig);
+		this.onCharacterAdded.Fire(rig);
 	}
 
 	private listenForCharacterRemoving(character: Model): void {
@@ -74,6 +79,7 @@ export class CharacterController implements OnStart {
 
 			connection.Disconnect();
 			this.character = undefined;
+			this.onCharacterRemoving.Fire();
 		});
 	}
 
