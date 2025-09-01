@@ -1,4 +1,4 @@
-import { Controller, OnInit } from '@flamework/core';
+import { Controller, OnInit, OnStart } from '@flamework/core';
 import type { Logger } from '@rbxts/log';
 import { Players } from '@rbxts/services';
 import { promiseTree } from '@rbxts/validate-tree';
@@ -13,12 +13,12 @@ import {
 import { characterSchema } from 'shared/utils/character/schema';
 
 @Controller()
-export class CharacterController implements OnInit {
+export class CharacterController implements OnStart {
 	private character?: Character;
 
 	constructor(private readonly logger: Logger) {}
 
-	public onInit(): void | Promise<void> {
+	public onStart(): void {
 		onCharacterAdded(Players.LocalPlayer, (character) => {
 			this.characterAdded(character);
 		});

@@ -6,16 +6,19 @@ import { setupLogger } from 'shared/utils/logger';
 function start(): void {
 	setupLogger();
 
+	Log.Info('Environment: {Environment}', $NODE_ENV);
+	Log.Info('Server version: {Version}', game.PlaceVersion);
+
 	Modding.registerDependency<Logger>((ctor) => {
 		return Log.ForContext(ctor);
 	});
-	Flamework.addPathsGlob('src/client/**/controllers');
+	Flamework.addPathsGlob('src/server/**/services');
 
 	try {
 		Flamework.ignite();
-		Log.Info('Controllers successfully loaded');
+		Log.Info('Services successfully loaded');
 	} catch {
-		Log.Fatal('Controllers could not be loaded');
+		Log.Fatal('Services could not be loaded');
 	}
 }
 
