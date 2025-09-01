@@ -139,6 +139,7 @@
 			"DateTime",
 			"assert",
 			"game",
+			"Font",
 			"BrickColor",
 			"pairs",
 			"ipairs",

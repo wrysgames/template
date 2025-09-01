@@ -7,8 +7,10 @@ interface LoadingDotProps {
 	animate?: boolean;
 }
 
+const SCALE_MAGNITUDE = 0.25;
+
 export function LoadingDot({ animate }: LoadingDotProps) {
-	const [goal, setGoal] = useState(UDim2.fromOffset(32, 32));
+	const [goal, setGoal] = useState(UDim2.fromScale(0, 0));
 	const position = useSpring(goal, {
 		frequency: 0.7,
 		damping: 0.6,
@@ -18,8 +20,8 @@ export function LoadingDot({ animate }: LoadingDotProps) {
 		let running = true;
 
 		if (animate) {
-			const up = UDim2.fromOffset(32, 24);
-			const down = UDim2.fromOffset(32, 40);
+			const up = UDim2.fromScale(0, SCALE_MAGNITUDE);
+			const down = UDim2.fromScale(0, -SCALE_MAGNITUDE);
 			let goingUp = true;
 
 			task.spawn(() => {
@@ -38,7 +40,8 @@ export function LoadingDot({ animate }: LoadingDotProps) {
 	}, [animate]);
 
 	return (
-		<Frame backgroundTransparency={1} size={UDim2.fromOffset(32, 32)}>
+		<Frame backgroundTransparency={1} size={UDim2.fromScale(1, 1)}>
+			<uisizeconstraint MaxSize={new Vector2(32, 32)} />
 			<Circle position={position} backgroundColor={new Color3(0, 0, 0)} size={UDim2.fromScale(1, 1)} />
 		</Frame>
 	);
