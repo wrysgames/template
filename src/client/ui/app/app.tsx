@@ -10,13 +10,13 @@ export function App() {
 
 	return (
 		<ErrorHandler>
-			<Layer>
+			<Layer displayOrder={999}>
 				<LoadingScreen visible={gamePhase === 'loading'} />
 			</Layer>
 
 			<Layer>
 				<Frame
-					backgroundColor={new Color3(1, 1, 1)}
+					backgroundColor={new Color3(0.9, 0.9, 0.9)}
 					size={UDim2.fromOffset(50, 50)}
 					position={UDim2.fromScale(1, 1)}
 					anchorPoint={new Vector2(1, 1)}

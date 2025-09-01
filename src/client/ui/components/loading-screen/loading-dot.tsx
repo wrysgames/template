@@ -19,8 +19,8 @@ export function LoadingDot({ animate, active }: LoadingDotProps) {
 	});
 
 	const position = useSpring(goal, {
-		frequency: 0.5,
-		damping: 0.8,
+		frequency: 1,
+		damping: 0.6,
 	});
 
 	useEffect(() => {

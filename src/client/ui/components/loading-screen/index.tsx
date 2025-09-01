@@ -1,9 +1,10 @@
-import { useSpring, useUnmountEffect } from '@rbxts/pretty-react-hooks';
-import React, { useEffect, useState } from '@rbxts/react';
-import { Frame, List } from '@rbxts/ui';
+import { useSpring } from '@rbxts/pretty-react-hooks';
+import React, { useState } from '@rbxts/react';
+import { Corner, Frame, List } from '@rbxts/ui';
 import { gamePhaseAtom } from 'client/ui/atoms/game-phase.atom';
 import { useLoadingSequence } from 'client/ui/hooks/use-loading-sequence';
 import { useRem } from 'client/ui/hooks/use-rem';
+import colors from 'shared/theme/colors';
 import Fonts from 'shared/theme/fonts';
 import { LoadingDot } from './loading-dot';
 
@@ -26,7 +27,7 @@ const STEPS: (() => Promise<void>)[] = [
 export function LoadingScreen({ visible }: LoadingScreenProps) {
 	const rem = useRem();
 
-	const { step } = useLoadingSequence(STEPS, () => {
+	const { step, complete, skip } = useLoadingSequence(STEPS, () => {
 		gamePhaseAtom('main');
 	});
 
@@ -55,7 +56,7 @@ export function LoadingScreen({ visible }: LoadingScreenProps) {
 				anchorPoint={new Vector2(0.5, 0.5)}
 			>
 				{STEPS.map((_, index) => (
-					<LoadingDot animate={step === index} active={step >= index} />
+					<LoadingDot key={index} animate={!complete && step === index} active={step >= index} />
 				))}
 				<List padding={rem(2)} horizontalAlignment={Enum.HorizontalAlignment.Center} axis="horizontal" />
 			</Frame>
@@ -66,6 +67,24 @@ export function LoadingScreen({ visible }: LoadingScreenProps) {
 				TextSize={rem(3)}
 				FontFace={Fonts.Montserratt.Bold}
 			/>
+			<textbutton
+				Size={new UDim2(0.5, 0, 0.05, 0)}
+				BackgroundColor3={colors.BLACK}
+				BackgroundTransparency={complete ? 1 : 0}
+				TextTransparency={complete ? 1 : 0}
+				TextColor3={colors.WHITE}
+				Text={'Skip'}
+				TextSize={rem(2)}
+				FontFace={Fonts.Montserratt.Bold}
+				Event={{
+					MouseButton1Click: () => {
+						skip();
+					},
+				}}
+			>
+				<uisizeconstraint MaxSize={new Vector2(rem(16), rem(6))} />
+				<Corner radius={new UDim(0, rem(1))} />
+			</textbutton>
 		</canvasgroup>
 	);
 }
