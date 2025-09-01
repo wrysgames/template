@@ -38,7 +38,7 @@ export function LoadingScreen({ visible }: LoadingScreenProps) {
 
 		const runSteps = async () => {
 			for (const stepFunction of steps) {
-				await stepFunction();
+				stepFunction();
 				setStep(step + 1);
 			}
 			gamePhaseAtom('main');
@@ -64,9 +64,9 @@ export function LoadingScreen({ visible }: LoadingScreenProps) {
 				position={UDim2.fromScale(0.5, 0.5)}
 				anchorPoint={new Vector2(0.5, 0.5)}
 			>
+				<LoadingDot animate={step === 0} />
 				<LoadingDot animate={step === 1} />
 				<LoadingDot animate={step === 2} />
-				<LoadingDot animate={step === 3} />
 				<List padding={rem(2)} horizontalAlignment={Enum.HorizontalAlignment.Center} axis="horizontal" />
 			</Frame>
 			<textlabel
