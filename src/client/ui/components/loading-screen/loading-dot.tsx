@@ -12,9 +12,15 @@ const SCALE_MAGNITUDE = 0.25;
 
 export function LoadingDot({ animate, active }: LoadingDotProps) {
 	const [goal, setGoal] = useState(UDim2.fromScale(0, 0));
+
+	const dotColor = useSpring(active ? new Color3(0, 0, 0) : new Color3(0.89, 0.89, 0.89), {
+		frequency: 0.5,
+		damping: 0.8,
+	});
+
 	const position = useSpring(goal, {
-		frequency: 0.7,
-		damping: 0.6,
+		frequency: 0.5,
+		damping: 0.8,
 	});
 
 	useEffect(() => {
@@ -45,11 +51,7 @@ export function LoadingDot({ animate, active }: LoadingDotProps) {
 	return (
 		<Frame backgroundTransparency={1} size={UDim2.fromScale(1, 1)}>
 			<uisizeconstraint MaxSize={new Vector2(32, 32)} />
-			<Circle
-				position={position}
-				backgroundColor={active ? new Color3(0, 0, 0) : new Color3(0.89, 0.89, 0.89)}
-				size={UDim2.fromScale(1, 1)}
-			/>
+			<Circle position={position} backgroundColor={dotColor} size={UDim2.fromScale(1, 1)} />
 		</Frame>
 	);
 }

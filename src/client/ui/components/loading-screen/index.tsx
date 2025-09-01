@@ -1,4 +1,4 @@
-import { useSpring } from '@rbxts/pretty-react-hooks';
+import { useSpring, useUnmountEffect } from '@rbxts/pretty-react-hooks';
 import React, { useEffect, useState } from '@rbxts/react';
 import { Frame, List } from '@rbxts/ui';
 import { gamePhaseAtom } from 'client/ui/atoms/game-phase.atom';
@@ -31,12 +31,13 @@ export function LoadingScreen({ visible }: LoadingScreenProps) {
 	});
 
 	const transparency = useSpring(visible ? 0 : 1, {
-		frequency: 1,
-		damping: 0.9,
+		frequency: 0.6,
+		damping: 0.8,
 	});
 
 	return (
 		<canvasgroup
+			Active={visible}
 			GroupTransparency={transparency}
 			BackgroundColor3={new Color3(1, 1, 1)}
 			Size={UDim2.fromScale(1, 1)}
