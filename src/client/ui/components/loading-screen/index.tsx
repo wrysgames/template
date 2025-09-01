@@ -31,8 +31,7 @@ export function LoadingScreen({ visible }: LoadingScreenProps) {
 				task.wait(3);
 			},
 			() => {
-				// change game phase from 'loading' to 'main'
-				gamePhaseAtom('main');
+				task.wait(2);
 			},
 		];
 
