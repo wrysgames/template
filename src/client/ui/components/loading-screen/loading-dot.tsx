@@ -5,11 +5,12 @@ import { Circle } from '../ui/circle';
 
 interface LoadingDotProps {
 	animate?: boolean;
+	active?: boolean;
 }
 
 const SCALE_MAGNITUDE = 0.25;
 
-export function LoadingDot({ animate }: LoadingDotProps) {
+export function LoadingDot({ animate, active }: LoadingDotProps) {
 	const [goal, setGoal] = useState(UDim2.fromScale(0, 0));
 	const position = useSpring(goal, {
 		frequency: 0.7,
@@ -44,7 +45,11 @@ export function LoadingDot({ animate }: LoadingDotProps) {
 	return (
 		<Frame backgroundTransparency={1} size={UDim2.fromScale(1, 1)}>
 			<uisizeconstraint MaxSize={new Vector2(32, 32)} />
-			<Circle position={position} backgroundColor={new Color3(0, 0, 0)} size={UDim2.fromScale(1, 1)} />
+			<Circle
+				position={position}
+				backgroundColor={active ? new Color3(0, 0, 0) : new Color3(0.89, 0.89, 0.89)}
+				size={UDim2.fromScale(1, 1)}
+			/>
 		</Frame>
 	);
 }
