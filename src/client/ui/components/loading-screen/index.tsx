@@ -39,9 +39,11 @@ export function LoadingScreen({ visible }: LoadingScreenProps) {
 		const runSteps = async () => {
 			for (const stepFunction of steps) {
 				stepFunction();
-				setStep(step + 1);
+				setStep(math.min(step + 1));
 			}
-			gamePhaseAtom('main');
+			task.delay(2, () => {
+				gamePhaseAtom('main');
+			});
 		};
 
 		runSteps();
@@ -70,7 +72,7 @@ export function LoadingScreen({ visible }: LoadingScreenProps) {
 				<List padding={rem(2)} horizontalAlignment={Enum.HorizontalAlignment.Center} axis="horizontal" />
 			</Frame>
 			<textlabel
-				Text={'Loading'}
+				Text={step > 2 ? 'Loading complete' : 'Loading'}
 				BackgroundTransparency={1}
 				TextSize={rem(3)}
 				FontFace={Fonts.Montserratt.Bold}

@@ -29,7 +29,7 @@ export function LoadingDot({ animate }: LoadingDotProps) {
 					setGoal(goingUp ? up : down);
 
 					goingUp = !goingUp;
-					task.wait(0.5); // 500ms
+					task.wait(0.5);
 				}
 			});
 		} else {
