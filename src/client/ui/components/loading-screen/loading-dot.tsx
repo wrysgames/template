@@ -32,6 +32,8 @@ export function LoadingDot({ animate }: LoadingDotProps) {
 					task.wait(0.5); // 500ms
 				}
 			});
+		} else {
+			setGoal(UDim2.fromScale(0, 0));
 		}
 
 		return () => {
