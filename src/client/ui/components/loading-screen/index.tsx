@@ -27,7 +27,7 @@ const STEPS: (() => Promise<void>)[] = [
 export function LoadingScreen({ visible }: LoadingScreenProps) {
 	const rem = useRem();
 
-	const { step, complete, skip } = useLoadingSequence(STEPS, () => {
+	const { step, complete, skip, skipped } = useLoadingSequence(STEPS, () => {
 		gamePhaseAtom('main');
 	});
 
@@ -62,7 +62,7 @@ export function LoadingScreen({ visible }: LoadingScreenProps) {
 			</Frame>
 			<textlabel
 				Size={new UDim2(0.5, 0, 0.05, 0)}
-				Text={step > 2 ? 'Loading complete' : 'Loading'}
+				Text={skipped ? 'Loading skipped' : complete ? 'Loading complete' : 'Loading'}
 				BackgroundTransparency={1}
 				TextSize={rem(3)}
 				FontFace={Fonts.Montserratt.Bold}
@@ -70,8 +70,6 @@ export function LoadingScreen({ visible }: LoadingScreenProps) {
 			<textbutton
 				Size={new UDim2(0.5, 0, 0.05, 0)}
 				BackgroundColor3={colors.BLACK}
-				BackgroundTransparency={complete ? 1 : 0}
-				TextTransparency={complete ? 1 : 0}
 				TextColor3={colors.WHITE}
 				Text={'Skip'}
 				TextSize={rem(2)}

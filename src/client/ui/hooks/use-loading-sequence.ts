@@ -6,14 +6,15 @@ const DELAY_BEFORE_COMPLETE = 1.5;
 export function useLoadingSequence(steps: (() => Promise<void>)[], onComplete?: () => void) {
 	const [step, setStep] = useState<number>(0);
 	const [complete, setComplete] = useState<boolean>(false);
+	const [skipped, setSkipped] = useState<boolean>(false);
 
 	const completed = () => {
-		setComplete(true);
 		onComplete?.();
 	};
 
 	const skip = () => {
 		if (!complete) {
+			setSkipped(true);
 			completed();
 		}
 	};
@@ -28,6 +29,7 @@ export function useLoadingSequence(steps: (() => Promise<void>)[], onComplete?: 
 				Log.Verbose('Loading phase {Phase} completed', i);
 				setStep(++i);
 			}
+			setComplete(true);
 			task.delay(DELAY_BEFORE_COMPLETE, () => {
 				if (!complete) {
 					completed();
@@ -38,5 +40,5 @@ export function useLoadingSequence(steps: (() => Promise<void>)[], onComplete?: 
 		runSteps();
 	}, []);
 
-	return { step, complete, skip };
+	return { step, complete, skip, skipped };
 }
