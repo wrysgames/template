@@ -26,3 +26,11 @@ export async function loadCharacter(player: Player): Promise<void> {
 		Promise.delay(CHARACTER_LOAD_TIMEOUT),
 	]);
 }
+
+export function onCharacterAdded(player: Player, callback: (character: Model) => void): RBXScriptConnection {
+	return player.CharacterAdded.Connect((character) => callback(character));
+}
+
+export function onCharacterRemoving(player: Player, callback: (character: Model) => void): RBXScriptConnection {
+	return player.CharacterRemoving.Connect((character) => callback(character));
+}
