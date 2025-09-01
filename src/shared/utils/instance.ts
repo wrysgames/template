@@ -8,7 +8,7 @@ type GetPartialObjectWithBindableConnectSlots<T extends Instance> = Partial<
 	GetBindableToRBXScriptSignal<T> & Pick<T, WritablePropertyNames<T>>
 >;
 
-export function createInstance<
+export function makeInstance<
 	T extends keyof CreatableInstances,
 	Q extends {
 		Children?: ReadonlyArray<Instance>;
