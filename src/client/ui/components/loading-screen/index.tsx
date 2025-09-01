@@ -16,7 +16,7 @@ const STEPS: (() => Promise<void>)[] = [
 		task.wait(1);
 	},
 	async () => {
-		task.wait(1);
+		task.wait(3);
 	},
 	async () => {
 		task.wait(1);
@@ -29,8 +29,6 @@ export function LoadingScreen({ visible }: LoadingScreenProps) {
 	const { step } = useLoadingSequence(STEPS, () => {
 		gamePhaseAtom('main');
 	});
-
-	print(step);
 
 	const transparency = useSpring(visible ? 0 : 1, {
 		frequency: 1,
@@ -51,7 +49,7 @@ export function LoadingScreen({ visible }: LoadingScreenProps) {
 			/>
 			<Frame
 				backgroundTransparency={1}
-				size={new UDim2(0.5, 0, 0.1, 0)}
+				size={new UDim2(0.5, 0, 0.05, 0)}
 				position={UDim2.fromScale(0.5, 0.5)}
 				anchorPoint={new Vector2(0.5, 0.5)}
 			>
@@ -61,6 +59,7 @@ export function LoadingScreen({ visible }: LoadingScreenProps) {
 				<List padding={rem(2)} horizontalAlignment={Enum.HorizontalAlignment.Center} axis="horizontal" />
 			</Frame>
 			<textlabel
+				Size={new UDim2(0.5, 0, 0.05, 0)}
 				Text={step > 2 ? 'Loading complete' : 'Loading'}
 				BackgroundTransparency={1}
 				TextSize={rem(3)}
