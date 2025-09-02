@@ -52,9 +52,15 @@ catalogs:
     '@rbxts/message-templates':
       specifier: ^0.3.2
       version: 0.3.2
+    '@rbxts/observers':
+      specifier: ^0.3.4
+      version: 0.3.4
     '@rbxts/pretty-react-hooks':
       specifier: ^0.6.4
       version: 0.6.4
+    '@rbxts/profile-store':
+      specifier: ^1.0.3
+      version: 1.0.3
     '@rbxts/react-charm':
       specifier: ^0.3.0
       version: 0.3.0
@@ -109,9 +115,15 @@ importers:
       '@rbxts/message-templates':
         specifier: catalog:prod
         version: 0.3.2
+      '@rbxts/observers':
+        specifier: catalog:prod
+        version: 0.3.4
       '@rbxts/pretty-react-hooks':
         specifier: catalog:prod
         version: 0.6.4(@rbxts/react-roblox@17.3.0-alpha.1(@rbxts/react@17.3.0-alpha.1))(@rbxts/react@17.3.0-alpha.1)
+      '@rbxts/profile-store':
+        specifier: catalog:prod
+        version: 1.0.3
       '@rbxts/react':
         specifier: catalog:react-alpha
         version: 17.3.0-alpha.1
@@ -387,11 +399,17 @@ packages:
   '@rbxts/object-utils@1.0.4':
     resolution: {integrity: sha512-dLLhf022ipV+9i910sOE7kl9losKHoon0WgeerHqVMQA5EYsLUsVT2AxhJuhk8MiDn5oJ2GiFofE/LadY9TpJQ==}
 
+  '@rbxts/observers@0.3.4':
+    resolution: {integrity: sha512-e3KndUQLhLG0MYZganjlvDrwhXi4jK5MAVeOUr5C44G3v9Zqvr3hANjvbzvSaDmK8LWWaYGsDsL0hBuHW4J2Lw==}
+
   '@rbxts/pretty-react-hooks@0.6.4':
     resolution: {integrity: sha512-yiuM3kOD0s2x0GFCUVfFdeSDJRX2ZycS88WOvqydaYwPIZ5rYDjzHjOzRgSpAzGcTVOFXsO64QOtD6svAdadzg==}
     peerDependencies:
       '@rbxts/react': '*'
       '@rbxts/react-roblox': '*'
+
+  '@rbxts/profile-store@1.0.3':
+    resolution: {integrity: sha512-hhaBnE7iabydxMMlun9ezD1oFCfETFXp95r2hjmQUip5GrGLGugAbrzdUhEaqRpdDaM+c4qsj2JfskdAUfz/mw==}
 
   '@rbxts/react-charm@0.3.0':
     resolution: {integrity: sha512-w64HoO6SxRSX86yNPiGazPQpR7cWBaWVATK9jkCphLQYmzdUV1BL9pRNN1Y1VMAk/PKiZ1mJdwX3PnwwvLXFvg==}
@@ -1378,6 +1396,8 @@ snapshots:
 
   '@rbxts/object-utils@1.0.4': {}
 
+  '@rbxts/observers@0.3.4': {}
+
   '@rbxts/pretty-react-hooks@0.6.4(@rbxts/react-roblox@17.3.0-alpha.1(@rbxts/react@17.3.0-alpha.1))(@rbxts/react@17.3.0-alpha.1)':
     dependencies:
       '@rbxts/react': 17.3.0-alpha.1
@@ -1385,6 +1405,8 @@ snapshots:
       '@rbxts/ripple': 0.9.3
       '@rbxts/services': 1.5.5
       '@rbxts/set-timeout': 1.1.2
+
+  '@rbxts/profile-store@1.0.3': {}
 
   '@rbxts/react-charm@0.3.0(@rbxts/charm@0.10.0)(@rbxts/react@17.3.0-alpha.1)':
     dependencies:

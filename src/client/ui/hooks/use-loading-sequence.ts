@@ -1,5 +1,5 @@
 import Log from '@rbxts/log';
-import { useEffect, useState } from '@rbxts/react';
+import { useEffect, useRef, useState } from '@rbxts/react';
 
 const DELAY_BEFORE_COMPLETE = 1.5;
 
@@ -7,13 +7,21 @@ export function useLoadingSequence(steps: (() => Promise<void>)[], onComplete?: 
 	const [step, setStep] = useState<number>(0);
 	const [complete, setComplete] = useState<boolean>(false);
 	const [skipped, setSkipped] = useState<boolean>(false);
+	const hasCompleted = useRef<boolean>(false);
 
 	const completed = () => {
+		if (hasCompleted.current) {
+			return;
+		}
+		hasCompleted.current = true;
+		setComplete(true);
 		onComplete?.();
+		Log.Info('Load sequence completed');
 	};
 
 	const skip = () => {
-		if (!complete) {
+		if (!hasCompleted.current) {
+			Log.Warn('Skipped load sequence');
 			setSkipped(true);
 			completed();
 		}
@@ -31,9 +39,7 @@ export function useLoadingSequence(steps: (() => Promise<void>)[], onComplete?: 
 			}
 			setComplete(true);
 			task.delay(DELAY_BEFORE_COMPLETE, () => {
-				if (!complete) {
-					completed();
-				}
+				completed();
 			});
 		};
 

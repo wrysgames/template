@@ -27,9 +27,9 @@
 		"@rbxts/types": "catalog:dev",
 		"husky": "catalog:dev",
 		"license-checker": "catalog:dev",
+		"rbxts-transformer-flamework": "catalog:dev",
 		"roblox-ts": "catalog:dev",
-		"typescript": "catalog:dev",
-		"rbxts-transformer-flamework": "catalog:dev"
+		"typescript": "catalog:dev"
 	},
 	"dependencies": {
 		"@flamework/core": "catalog:prod",
@@ -37,7 +37,9 @@
 		"@rbxts/charm": "catalog:prod",
 		"@rbxts/log": "catalog:prod",
 		"@rbxts/message-templates": "catalog:prod",
+		"@rbxts/observers": "catalog:prod",
 		"@rbxts/pretty-react-hooks": "catalog:prod",
+		"@rbxts/profile-store": "catalog:prod",
 		"@rbxts/react": "catalog:react-alpha",
 		"@rbxts/react-charm": "catalog:prod",
 		"@rbxts/react-roblox": "catalog:react-alpha",

@@ -24,7 +24,9 @@ catalogs:
     '@rbxts/signal': ^1.1.1
     '@rbxts/t': ^3.2.1
     '@rbxts/ui': ^0.1.0
+    '@rbxts/observers': ^0.3.4
     '@rbxts/validate-tree': ^2.0.2
+    '@rbxts/profile-store': ^1.0.3
     rbxts-transform-env: ^3.0.0
   react-alpha:
     '@rbxts/react': 17.3.0-alpha.1
